@@ -4,3 +4,8 @@ spring:
     url: jdbc:mysql://localhost/algamoneyapi?createDatabaseIfNotExist=true&useSSL=false
     username: root
     password: root
+  
+algamoney:
+  seguranca:
+    enable-https: false
+    

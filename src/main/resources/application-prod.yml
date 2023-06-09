@@ -6,3 +6,5 @@ spring:
 
 algamoney:
   origem-permitida: https://algamoney-angular.railway.com
+  seguranca:
+    enable-https: true

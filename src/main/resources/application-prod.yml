@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: ${PROD_URL}
+    username: root
+    password: ylRiMNFCE7xV4g6qea0H
+
+algamoney:
+  origem-permitida: https://algamoney-angular.railway.com

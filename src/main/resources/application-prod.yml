@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: ${PROD_URL}
-    username: root
-    password: ylRiMNFCE7xV4g6qea0H
+    url: ${PROD_DB_URL}
+    username: ${PROD_DB_USERNAME}
+    password: ${PROD_DB_PASSWORD}
 
 algamoney:
   origem-permitida: https://algamoney-angular.railway.com

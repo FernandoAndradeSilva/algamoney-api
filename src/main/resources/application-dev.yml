@@ -4,8 +4,3 @@ spring:
     url: jdbc:mysql://localhost/algamoneyapi?createDatabaseIfNotExist=true&useSSL=false
     username: root
     password: root
-  jpa:
-    show-sql: true
-  jackson:
-    deserialization:
-      fail-on-unknown-properties: true

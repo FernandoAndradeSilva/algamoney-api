@@ -1,3 +1,8 @@
 spring:
   profiles:
     active: dev
+  jpa:
+    show-sql: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true

@@ -10,6 +10,7 @@ import javax.crypto.spec.SecretKeySpec;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionHandler;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -30,6 +31,7 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 
 @SuppressWarnings("deprecation")
+@Profile("prod")
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -58,9 +60,8 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter{
 
 	@Bean
 	public JwtDecoder jwtDecoder() {
-	    String secretKeyString = "3032885ba9cd6621bcc4e7d6b6c35c2b";
-	    var secretKey = new SecretKeySpec(secretKeyString.getBytes(), "HmacSHA256");
-	    return NimbusJwtDecoder.withSecretKey(secretKey).build();
+		var secretKey = new SecretKeySpec("3032885ba9cd6621bcc4e7d6b6c35c2b".getBytes(), "HmacSHA256");
+        return NimbusJwtDecoder.withSecretKey(secretKey).build();
 	}
     
     @Bean
@@ -69,6 +70,10 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter{
         return super.authenticationManager();
     }
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
     
     private JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
@@ -93,10 +98,7 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter{
     }    
 
     
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+
     
 
     

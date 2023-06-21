@@ -21,10 +21,8 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
-	private String nome;
-	
-	private String email;
-	
+	private String nome;	
+	private String email;	
 	private String senha;	
 	
 	@ManyToMany(fetch = FetchType.EAGER)

@@ -16,8 +16,6 @@
 	<description>Api Algamoney</description>
 	<properties>
 		<java.version>17</java.version>
-		 <source>17</source>
-         <target>17</target>
 	</properties>
 	<dependencies>
 		<dependency>

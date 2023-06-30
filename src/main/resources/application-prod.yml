@@ -5,6 +5,6 @@ spring:
     password: ${PROD_DB_PASSWORD}
 
 algamoney:
-  origem-permitida: https://algamoney-angular.railway.com
   seguranca:
-    enable-https: true
+    enable-https: true    
+  origin-permitida:  https://algamoney-angular.railway.com

@@ -3,28 +3,35 @@ package com.example.algamoney.api.config.property;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@Component
 @ConfigurationProperties("algamoney")
+@Component
 public class AlgamoneyApiProperty {
 	
-	private String origemPermitida = "http://localhost:8000";
+	private String originPermitida = "http://localhost:8000";
 	
-	private final Seguranca seguranca = new Seguranca();	
+	private final Seguranca seguranca = new Seguranca();		
 	
-	public void setOrigemPermitida(String origemPermitida) {
-		this.origemPermitida = origemPermitida;
+	
+	public String getOriginPermitida() {
+		return originPermitida;
 	}
+
+	public void setOriginPermitida(String originPermitida) {
+		this.originPermitida = originPermitida;
+	}
+
+
+
+
 
 	public Seguranca getSeguranca() {
 		return seguranca;
 	}	
 
-	public String getOrigemPermitida() {
-		return origemPermitida;
-	}
-	
-	
-	
+
+
+
+
 	public static class Seguranca {
 		
 		private boolean enableHttps;

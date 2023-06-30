@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: ${PROD_DB_URL}
-    username: ${PROD_DB_USERNAME}
-    password: ${PROD_DB_PASSWORD}
+    url: jdbc:mysql://algamoneydb.cabbosts295g.sa-east-1.rds.amazonaws.com:3306/algamoneybd?createDatabaseIfNotExist=true&useSSL=false
+    username: root
+    password: administrador
 
 algamoney:
   seguranca:

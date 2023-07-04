@@ -7,4 +7,4 @@ spring:
 algamoney:
   seguranca:
     enable-https: true    
-  origin-permitida:  https://algamoney-angular.railway.com
+  origin-permitida: http://algamoney-ui.s3-website-sa-east-1.amazonaws.com/

@@ -1,9 +1,9 @@
 spring:
   database: MYSQL
   datasource:
-    url: jdbc:mysql://algamoneydb.cabbosts295g.sa-east-1.rds.amazonaws.com:3306/algamoneybd?createDatabaseIfNotExist=true&useSSL=false
+    url: jdbc:mysql://localhost/algamoneyapi?createDatabaseIfNotExist=true&useSSL=false
     username: root
-    password: administrador
+    password: root
   
 algamoney:
   seguranca:
